@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .casa {
+            width: 130px;
+            height: 130px;
+            position: relative;
+            font-size: 70px;
+            background-color: black;
+        }
+
+        .casa:hover {
+            top: -5px;
+            box-shadow: 0 2px 2px rgb(255, 255, 255);
+            background-color: black;
+            border-radius: 15px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>jogo da velha</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body
+    background="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2022/01/inovacao-flamengo-utiliza-um-novo-recurso-para-recuperacao-de-lesoes.jpg">
+    <center><strong>
+            <p id="Resultado" style="font-size: 60px; font-family: 'Courier New', Courier, monospace; color: white; ">
+            <p>
+        </strong>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="font-size: 50px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+                font: wheight 200px; color:white">
+                        Bora jogar uma velha!👍😎😃
+                    </h3>
+    </center>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <table class="table">
+                <tbody style="text-align:center ;">
+                    <tr class="table-sucess">
+                        <td>
+                            <button id="00" onclick="f00()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="01" onclick="f01()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="02" onclick="f02()" class="casa"></button>
+                        </td>
+
+                    <tr class="table-sucess">
+                        <td>
+                            <button id="10" onclick="f10()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="11" onclick="f11()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="12" onclick="f12()" class="casa"></button>
+                        </td>
+
+                    <tr class="table-sucess">
+                        <td>
+                            <button id="20" onclick="f20()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="21" onclick="f21()" class="casa"></button>
+                        </td>
+                        <td>
+                            <button id="22" onclick="f22()" class="casa"></button>
+                        </td>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    let ultima = "X"
+    let velha = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
+    function verifica() {
+        if (ultima == "X") {
+            ultima = "0"
+            e++
+        }
+        else {
+            ultima = "X"
+            e++
+        }
+    }
+    function f00() {
+        verifica()
+        velha[0][0] = ultima
+        var botao = document.getElementById("00")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    function f01() {
+        verifica()
+        velha[0][1] = ultima
+        var botao = document.getElementById("01")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "red"
+        botao.style.color = "black"
+        vencedor()
+    }
+    function f02() {
+        verifica()
+        velha[0][2] = ultima
+        var botao = document.getElementById("02")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    function f10() {
+        verifica()
+        velha[1][0] = ultima
+        var botao = document.getElementById("10")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    function f11() {
+        verifica()
+        velha[1][1] = ultima
+        var botao = document.getElementById("11")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "red"
+        botao.style.color = "black"
+        vencedor()
+    }
+    function f12() {
+        verifica()
+        velha[1][2] = ultima
+        var botao = document.getElementById("12")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    function f20() {
+        verifica()
+        velha[2][0] = ultima
+        var botao = document.getElementById("20")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    function f21() {
+        verifica()
+        velha[2][1] = ultima
+        var botao = document.getElementById("21")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "red"
+        botao.style.color = "black"
+        vencedor()
+    }
+    function f22() {
+        verifica()
+        velha[2][2] = ultima
+        var botao = document.getElementById("22")
+        botao.innerHTML = ultima
+        botao.disabled = true;
+        botao.style.backgroundColor = "black"
+        botao.style.color = "red"
+        vencedor()
+    }
+    let e = 0
+    let g = 0
+    function vencedor() {
+        if (velha[0][0] == velha[0][1] && velha[0][1] == velha[0][2]) {
+            document.getElementById("Resultado").innerHTML = velha[0][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("00").style.backgroundColor = "green"
+            document.getElementById("01").style.backgroundColor = "green"
+            document.getElementById("02").style.backgroundColor = "green"
+            document.getElementById("00").style.color = "black"
+            document.getElementById("01").style.color = "black"
+            document.getElementById("02").style.color = "black"
+            
+        }
+        else if (velha[0][0] == velha[1][0] && velha[1][0] == velha[2][0]) {
+            document.getElementById("Resultado").innerHTML = velha[0][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("00").style.backgroundColor = "green"
+            document.getElementById("10").style.backgroundColor = "green"
+            document.getElementById("20").style.backgroundColor = "green"
+            document.getElementById("00").style.color = "black"
+            document.getElementById("10").style.color = "black"
+            document.getElementById("20").style.color = "black"
+        }
+        else if (velha[0][0] == velha[1][1] && velha[1][1] == velha[2][2]) {
+            document.getElementById("Resultado").innerHTML = velha[0][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("00").style.backgroundColor = "green"
+            document.getElementById("11").style.backgroundColor = "green"
+            document.getElementById("22").style.backgroundColor = "green"
+            document.getElementById("00").style.color = "black"
+            document.getElementById("11").style.color = "black"
+            document.getElementById("22").style.color = "black"
+        }
+        //////////////////////////////////////////////////////  SEGUNDA LINHA
+        else if (velha[1][0] == velha[1][1] && velha[1][1] == velha[1][2]) {
+            document.getElementById("Resultado").innerHTML = velha[1][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("10").style.backgroundColor = "green"
+            document.getElementById("11").style.backgroundColor = "green"
+            document.getElementById("12").style.backgroundColor = "green"
+            document.getElementById("10").style.color = "black"
+            document.getElementById("11").style.color = "black"
+            document.getElementById("12").style.color = "black"
+        }
+        ///////////////////////////////////////////////////////////////////////////////
+        else if (velha[0][0] == velha[1][1] && velha[1][1] == velha[2][2]) {
+            document.getElementById("Resultado").innerHTML = velha[0][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("00").style.backgroundColor = "green"
+            document.getElementById("11").style.backgroundColor = "green"
+            document.getElementById("22").style.backgroundColor = "green"
+            document.getElementById("00").style.color = "black"
+            document.getElementById("11").style.color = "black"
+            document.getElementById("22").style.color = "black"
+        }
+        else if (velha[2][0] == velha[1][1] && velha[1][1] == velha[0][2]) {
+            document.getElementById("Resultado").innerHTML = velha[2][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("20").style.backgroundColor = "green"
+            document.getElementById("11").style.backgroundColor = "green"
+            document.getElementById("02").style.backgroundColor = "green"
+            document.getElementById("20").style.color = "black"
+            document.getElementById("11").style.color = "black"
+            document.getElementById("02").style.color = "black"
+        }
+        else if (velha[2][0] == velha[2][1] && velha[2][1] == velha[2][2]) {
+            document.getElementById("Resultado").innerHTML = velha[2][0] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("20").style.backgroundColor = "green"
+            document.getElementById("21").style.backgroundColor = "green"
+            document.getElementById("22").style.backgroundColor = "green"
+            document.getElementById("20").style.color = "black"
+            document.getElementById("21").style.color = "black"
+            document.getElementById("20").style.color = "black"
+        }
+        else if (velha[2][2] == velha[1][2] && velha[1][2] == velha[0][2]) {
+            document.getElementById("Resultado").innerHTML = velha[2][2] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("22").style.backgroundColor = "green"
+            document.getElementById("12").style.backgroundColor = "green"
+            document.getElementById("02").style.backgroundColor = "green"
+            document.getElementById("22").style.color = "black"
+            document.getElementById("12").style.color = "black"
+            document.getElementById("02").style.color = "black"
+        }
+        else if (velha[2][1] == velha[1][1] && velha[1][1] == velha[0][1]) {
+            document.getElementById("Resultado").innerHTML = velha[2][1] + " vemceu"
+            document.getElementById("00").disabled = true
+            document.getElementById("01").disabled = true
+            document.getElementById("02").disabled = true
+            document.getElementById("10").disabled = true
+            document.getElementById("11").disabled = true
+            document.getElementById("12").disabled = true
+            document.getElementById("20").disabled = true
+            document.getElementById("21").disabled = true
+            document.getElementById("22").disabled = true
+            g = 9
+            reseta()
+            document.getElementById("21").style.backgroundColor = "green"
+            document.getElementById("11").style.backgroundColor = "green"
+            document.getElementById("01").style.backgroundColor = "green"
+            document.getElementById("21").style.color = "black"
+            document.getElementById("11").style.color = "black"
+            document.getElementById("01").style.color = "black"
+        }
+
+
+        if (e == 9) {
+            if (g != 9) {
+                document.getElementById("Resultado").innerHTML = "empate"
+                reseta()
+            }
+        }
+    }
+    function reseta() {
+        velha = [["a", "b", "c"], ["d", "e", "f"], ["g", "h", "i"]]
+        g = 0
+        e = 0
+setTimeout(function(){
+        document.getElementById("00").disabled = false
+        document.getElementById("01").disabled = false
+        document.getElementById("02").disabled = false
+        document.getElementById("10").disabled = false
+        document.getElementById("11").disabled = false
+        document.getElementById("12").disabled = false
+        document.getElementById("20").disabled = false
+        document.getElementById("21").disabled = false
+        document.getElementById("22").disabled = false
+        /////////////////////////////////////////////
+        document.getElementById("00").innerHTML = null
+        document.getElementById("01").innerHTML = null
+        document.getElementById("02").innerHTML = null
+        document.getElementById("10").innerHTML = null
+        document.getElementById("11").innerHTML = null
+        document.getElementById("12").innerHTML = null
+        document.getElementById("20").innerHTML = null
+        document.getElementById("21").innerHTML = null
+        document.getElementById("22").innerHTML = null
+        document.getElementById("Resultado").innerHTML = null
+        ////////////////////////////////////////////////////
+        document.getElementById("00").style.backgroundColor = "black"
+        document.getElementById("01").style.backgroundColor = "black"
+        document.getElementById("02").style.backgroundColor = "black"
+        document.getElementById("10").style.backgroundColor = "black"
+        document.getElementById("11").style.backgroundColor = "black"
+        document.getElementById("12").style.backgroundColor = "black"
+        document.getElementById("20").style.backgroundColor = "black"
+        document.getElementById("21").style.backgroundColor = "black"
+        document.getElementById("22").style.backgroundColor = "black"
+}, 1000)
+    }
+
+
+
+</script>
